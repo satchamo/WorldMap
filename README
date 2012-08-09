@@ -1,0 +1,34 @@
+World Map
+=========
+
+Overview
+--------
+Many Americans (including the humble author) are notoriously bad at geography. This "game" prototype attempts to improve the situation by helping users learn where all the world's countries are located on a map -- by mindless repetition (the preferred learning method in the US). 
+
+Game Play
+---------
+When the application launches, the name of a country appears on the form. The user is tasked with locating and clicking the country on the map. The user can drag the map around with the mouse to pan, and use the scroll wheel to zoom in and out. If the user correctly identifies the country, it is colored green, otherwise it is colored red (which will _surely_ please the colorblind). A new country name is presented to the user, and the game repeats. 
+
+The status bar always shows the current score. 
+
+Notes
+----
+* Map enthusiasts will be disappointed to learn that the author used a simple Mercator projection to draw the map. But don't despair. For those so inclined, implementing the IProjection interface allows one to use a more exotic projection. 
+* `MapView` extends `System.Windows.Forms.UserControl` so it can _supposedly_ be used like a normal WinForms control. 
+* `clean_geojson.py` simply extracts the pertinent data from `geo.json` and saves it to a new JSON file that is easier to parse in C#.
+
+TODO
+----
+* Implement some kind of animation when a country is clicked (zoom/pan to the correct country, make it flash)
+* Sound effects/audio feedback
+* Timed game play
+* Save scores
+
+Credits
+-------
+David Paleino for the GeoJson data:
+http://anonscm.debian.org/gitweb/?p=pkg-grass/tilemill.git;a=blob;f=examples/geography-class/layers/country-interaction.geojson;h=9c0c96b594d0b44c0bca0512e3d0a8c99d89c6b2;hb=232383caaa8632f85821047de0075d4bd0d6d058
+
+Json.NET for the JSON parsing library:
+http://json.codeplex.com/
+
